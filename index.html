@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Survey Website</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    background:white;
+    max-width:500px;
+    margin:auto;
+    padding:20px;
+    border-radius:10px;
+}
+
+input, textarea{
+    width:90%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+.hidden{
+    display:none;
+}
+</style>
+</head>
+<body>
+
+<!-- SIGN UP -->
+<div class="container" id="signup">
+    <h2>Sign Up</h2>
+
+    <input type="text" id="signupName" placeholder="Magaca"><br>
+    <input type="email" id="signupEmail" placeholder="Email"><br>
+    <input type="password" id="signupPassword" placeholder="Password"><br>
+
+    <button onclick="goToLogin()">Create Account</button>
+</div>
+
+<!-- LOGIN -->
+<div class="container hidden" id="login">
+    <h2>Login</h2>
+
+    <input type="email" id="loginEmail" placeholder="Email"><br>
+    <input type="password" id="loginPassword" placeholder="Password"><br>
+
+    <button onclick="startSurvey()">Login</button>
+</div>
+
+<!-- QUESTIONS -->
+<div class="container hidden" id="survey">
+    <h2>Survey Questions</h2>
+
+    <p>1. Waa maxay magacaaga?</p>
+    <input type="text">
+
+    <p>2. Immisa jir baad tahay?</p>
+    <input type="number">
+
+    <p>3. Waa maxay cuntada aad ugu jeceshahay?</p>
+    <input type="text">
+
+    <p>4. Waa maxay midabka aad ugu jeceshahay?</p>
+    <input type="text">
+
+    <p>5. Waa maxay hiwaayaddaada?</p>
+    <input type="text">
+
+    <p>6. Ma jeceshahay Programming?</p>
+    <input type="text">
+
+    <p>7. Waa maxay luqadda  aad ugu jeceshahay?</p>
+    <input type="text">
+
+    <p>8. Maxaad rabtaa inaad mustaqbalka noqoto?</p>
+    <input type="text">
+
+    <p>9. Maxay yihiin yoolalkaaga sanadkan?</p>
+    <input type="text">
+
+    <p>10. Fariin dheeraad ah?</p>
+    <textarea></textarea>
+
+    <br><br>
+
+    <button onclick="finishSurvey()">Submit</button>
+</div>
+
+<!-- THANK YOU -->
+<div class="container hidden" id="thankyou">
+    <h2>Mahadsanid!</h2>
+    <p>Waxaad dhamaystirtay survey-ga.</p>
+</div>
+
+<script>
+function goToLogin(){
+    document.getElementById("signup").classList.add("hidden");
+    document.getElementById("login").classList.remove("hidden");
+}
+
+function startSurvey(){
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("survey").classList.remove("hidden");
+}
+
+function finishSurvey(){
+    document.getElementById("survey").classList.add("hidden");
+    document.getElementById("thankyou").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
